@@ -27,7 +27,7 @@ export default function RootLayout({
 			lang="en"
 			className={`${fontSans.variable} ${fontMono.variable} antialiased`}
 		>
-			<body className="flex h-full min-h-full flex-col justify-center from-gray-50 to-[#d2d6db] bg-no-repeat">
+			<body className="flex h-dvh min-h-full flex-col items-center justify-center bg-linear-to-b from-gray-50 to-[#d2d6db] bg-no-repeat">
 				{children}
 			</body>
 		</html>
