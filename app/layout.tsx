@@ -1,4 +1,14 @@
+import { ThemeProvider } from "@/components/theme-provider";
+import { Button } from "@/components/ui/button";
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Moon, Sun } from "lucide-react";
 import type { Metadata } from "next";
+import { useTheme } from "next-themes";
 import { Noto_Sans, Noto_Sans_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -26,9 +36,17 @@ export default function RootLayout({
 		<html
 			lang="en"
 			className={`${fontSans.variable} ${fontMono.variable} antialiased`}
+			suppressHydrationWarning
 		>
-			<body className="flex h-dvh min-h-full flex-col items-center justify-center bg-linear-to-b from-gray-50 to-[#d2d6db] bg-no-repeat">
-				{children}
+			<body className="dark:from-secondary dark:to-background flex h-dvh min-h-full flex-col items-center justify-center bg-linear-to-b from-gray-50 to-[#d2d6db] bg-no-repeat">
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="light"
+
+					// disableTransitionOnChange
+				>
+					{children}
+				</ThemeProvider>
 			</body>
 		</html>
 	);
