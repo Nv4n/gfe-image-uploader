@@ -1,15 +1,8 @@
+import ImageUploadDialog from "@/components/image-upload-dialog";
 import ThemeToggle from "@/components/theme-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
-} from "@/components/ui/dialog";
 import { Flag } from "lucide-react";
 import Image from "next/image";
 
@@ -31,7 +24,16 @@ export default function Home() {
 							/>
 						</AvatarFallback>
 					</Avatar>
-
+					<ImageUploadDialog>
+						<ImageUploadDialog.Trigger>
+							<Button
+								variant="outline"
+								className="mt-2 rounded px-3 py-2 text-sm"
+							>
+								Update picture
+							</Button>
+						</ImageUploadDialog.Trigger>
+					</ImageUploadDialog>
 				</CardHeader>
 				<CardContent className="flex flex-col gap-6">
 					<h1 className="text-primary text-2xl font-semibold">
